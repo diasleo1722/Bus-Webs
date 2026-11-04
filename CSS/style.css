@@ -1,1 +1,29 @@
-
+nav img {
+        width: 175px;
+        top: -20px;
+        bottom: -20px;
+        cursor: pointer;
+}
+nav img:hover {
+        background-color: rgb(236, 238, 237);
+}
+nav {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+}
+nav a {
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 15px;
+        transition: background-color 0.5s ease;
+}
+nav a:hover {
+        background-color: #1C9B8E78;
+}
+a {
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+}
