@@ -39,6 +39,7 @@ section h2{
     width: 100%;
     padding: 40px 5%;
     border:solid 5px #40d64c;
+    border-radius: 30px;
 }
 
 .Rota-2{
@@ -51,6 +52,7 @@ section h2{
     width: 100%;
     padding: 40px 5%;
     border:solid 5px #40d64c;
+    border-radius: 30px;
 }
 
 .Rota-3{
@@ -63,6 +65,7 @@ section h2{
     width: 100%;
     padding: 40px 5%;
     border:solid 5px #40d64c;
+    border-radius: 30px;
 }
 
 .Rota-4{
@@ -75,6 +78,7 @@ section h2{
     width: 100%;
     padding: 40px 5%;
     border:solid 5px #40d64c;
+    border-radius: 30px;
 }
 
 button{
