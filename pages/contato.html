@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <link rel="stylesheet" href="../style/nav-bar-style.css">
+    <title>Contato | Bus-Web</title>
     <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/nav-bar-style.css">
+    <!-- Complementa o estilo da navegação sem alterar as outras páginas. -->
+    <link rel="stylesheet" href="../style/contato-style.css">
 </head>
-<body>
-    <nav class="navbar">
-        <ul class="nav-bar-links">
-        </ul>
+<body class="pagina-contato">
+    <nav class="navbar" aria-label="Navegação principal">
+        <!-- Os links são preenchidos pelo arquivo scripts/navBar.js. -->
+        <ul class="nav-bar-links"></ul>
     </nav>
-    
-    
-    <footer></footer>    
-    <script type= "module" src="../scripts/navBarPages.js"></script>
+
+    <main class="contato">
+        <h1>Contato</h1>
+        <p class="contato-descricao">Dúvidas ou sugestões? Entre em contato com a equipe.</p>
+
+        <section class="contato-email" aria-labelledby="email-titulo">
+            <h2 id="email-titulo">E-mail</h2>
+            <div class="contato-email-linha">
+                <!-- svgView recorta só o ônibus do logo; a imagem é decorativa. -->
+                <img class="contato-icone" src="../imagens/logo/logobus.svg#svgView(viewBox(80,171,386,217))" width="64" height="36" alt="" aria-hidden="true">
+                <p class="contato-endereco">contato@busweb.com.br</p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../scripts/navBarPages.js"></script>
 </body>
 </html>
