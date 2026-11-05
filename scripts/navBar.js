@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             img.src = `imagens/logo/logobus.svg`;
             // Descreve o destino do logo para quem usa leitor de tela.
             img.alt = "Bus-Web — início";
-            link.href = `/index.html`
+            link.href = `index.html`
 
             link.appendChild(img);
         }
