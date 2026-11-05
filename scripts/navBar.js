@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (textoAtual == "Logo"){
             const img = document.createElement("img");
             img.src = `/imagens/logo/logobus.svg`;
+            // Descreve o destino do logo para quem usa leitor de tela.
+            img.alt = "Bus-Web — início";
             link.href = `/index.html`
 
             link.appendChild(img);
@@ -28,6 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
             link.textContent = textoAtual;
         }
      
+        // Identifica a página atual para acessibilidade e destaque visual.
+        if (link.pathname === window.location.pathname) {
+            link.setAttribute("aria-current", "page");
+        }
+
         elemento.appendChild(link);
         navBar.appendChild(elemento);
     });
