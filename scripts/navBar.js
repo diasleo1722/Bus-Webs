@@ -14,20 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const link = document.createElement("a");
 
         
-        link.href = `/pages/${textoAtual.toLowerCase()}.html`;
+        link.href = `pages/${textoAtual.toLowerCase()}.html`;
         link.title = `Acessar ${textoAtual}`;
 
         if (textoAtual == "Logo"){
             const img = document.createElement("img");
-            img.src = `/imagens/logo/logobus.svg`;
-            link.href = `/index.html`
+            img.src = `imagens/logo/logobus.svg`;
+            link.href = `index.html`
 
             link.appendChild(img);
         }
         else{
             link.textContent = textoAtual;
         }
-     
+        
         elemento.appendChild(link);
         navBar.appendChild(elemento);
     });
