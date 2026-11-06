@@ -3,7 +3,7 @@
 
 * {
   box-sizing: border-box;
-  background-color: white;
+  background-color: color;
 }
 
 body{
@@ -17,21 +17,29 @@ body{
 
 .cabecalho h1 {
   margin: 0 0 8px;
+  color: #147A42;
 }
 
 .cabecalho p {
   margin: 0;
+  color: #40d64c; 
 }
 
 .container {
   width: min(100% - 32px, 1000px);
-  margin: 32px auto;
+  margin: 40px auto;
+  background-color: #e5f7e9;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .grade-mapas {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+
 }
 
 .mapa {
@@ -47,7 +55,14 @@ body{
   height: 220px;
   object-fit: cover;
   background-color: #e8edf1;
-  border-radius: 4px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  transition: 0.4s ease;
+}
+
+.mapa img{
+    transform: scale(1.03);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.20);
 }
 
 .localizacao {
