@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
     const navBar = document.getElementsByClassName("nav-bar-links")[0];
 
+    // Define uma variável para definir o estado de inversão de cores.
+    const invertColorsFlag = localStorage.getItem("invertColors") === "true";
+    if (invertColorsFlag) {
+        document.body.style.filter = "invert(100%)";
+    }
 
     navBarLinks.forEach((textoAtual, indice) => {
         const elemento = document.createElement("li");
@@ -16,11 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const link = document.createElement("a");
 
         if (textoAtual == "Invert") {
-            icone.src = "imagens/logo/inverter-cores.svg";
+            icone.src = document.body.style.filter === "invert(100%)" ? "imagens/logo/inverter-cores-off.svg" : "imagens/logo/inverter-cores.svg";
             icone.alt = link.title = "Inverter cores";
             icone.style.width = "40px";
             icone.onclick = () => {
                 document.body.style.filter = document.body.style.filter === "invert(100%)" ? "none" : "invert(100%)";
+                icone.src = document.body.style.filter === "invert(100%)" ? "imagens/logo/inverter-cores-off.svg" : "imagens/logo/inverter-cores.svg";
+
+                // Define o estado de inversão de cores no localStorage para que seja mantido entre as sessões.
+                localStorage.setItem("invertColors", document.body.style.filter === "invert(100%)" ? "true" : "false");
             }
             icone.style.cursor = "pointer";
             link.appendChild(icone);
