@@ -29,7 +29,10 @@ section h2{
     color: #40d64c;
 }
 
-.Rota-1{
+.Rota-1,
+.Rota-2,
+.Rota-3,
+.Rota-4{
     --cor-fundo-informacoes: #f4faf5;
     --cor-texto-informacoes: #23743c;
     --cor-borda-informacoes: #cfe2d4;
@@ -39,10 +42,11 @@ section h2{
     border:solid 5px #40d64c;
     border-radius: 30px;
     overflow: hidden;
+    margin-top: 36px;
 }
 
-/* Mantém o resumo e a expansão dentro da mesma borda do primeiro cartão. */
-.ResumoRota1{
+/* Mantém o resumo e a expansão dentro da mesma borda de cada cartão. */
+.ResumoRota{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,24 +56,24 @@ section h2{
     padding: 40px 5%;
 }
 
-.AreaImagem1{
+.AreaImagemRota{
     flex: 1;
     min-width: 0;
 }
 
-.AreaImagem1 img{
+.AreaImagemRota img{
     display: block;
     width: 100%;
     max-width: 500px;
     height: auto;
 }
 
-.AreaTexto1{
+.AreaTextoRota{
     flex: 1;
     min-width: 0;
 }
 
-.InformacoesRota1{
+.InformacoesRota{
     width: 100%;
     padding: 28px 5%;
     border-top: solid 2px var(--cor-borda-informacoes);
@@ -77,28 +81,28 @@ section h2{
     text-align: left;
 }
 
-.InformacoesRota1[hidden]{
+.InformacoesRota[hidden]{
     display: none;
 }
 
-.ConteudoInformacoes1{
+.ConteudoInformacoes{
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 32px;
 }
 
-.InformacoesRota1 h3{
+.InformacoesRota h3{
     margin: 0 0 8px;
     color: var(--cor-texto-informacoes);
     font-size: 20px;
 }
 
-.InformacoesRota1 p{
+.InformacoesRota p{
     margin: 0;
     line-height: 1.5;
 }
 
-.ListaHorarios1{
+.ListaHorarios{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -107,7 +111,7 @@ section h2{
     list-style: none;
 }
 
-.ListaHorarios1 li{
+.ListaHorarios li{
     padding: 10px;
     border: solid 1px var(--cor-borda-informacoes);
     border-radius: 6px;
@@ -118,99 +122,63 @@ section h2{
     text-align: center;
 }
 
-.EconomiaRota1{
+.EconomiaRota{
     padding-left: 32px;
     border-left: solid 1px var(--cor-borda-informacoes);
 }
 
-.EconomiaRota1 .ValorEconomia1{
+.EconomiaRota .ValorEconomia{
     margin: 16px 0 8px;
     color: var(--cor-texto-informacoes);
     font-size: 32px;
     font-weight: bold;
 }
 
-#AcessarRota1:focus-visible{
+.AcessarRota:focus-visible{
     outline: solid 3px var(--cor-texto-informacoes);
     outline-offset: 4px;
 }
 
-/* Adapta somente o primeiro cartão e sua expansão para telas menores. */
+/* Adapta os cartões e suas expansões para telas menores. */
 @media (max-width: 700px){
-    .ResumoRota1{
+    .ResumoRota{
         flex-direction: column;
         gap: 20px;
         padding: 24px 6%;
     }
 
-    .AreaImagem1,
-    .AreaTexto1{
+    .AreaImagemRota,
+    .AreaTextoRota{
         width: 100%;
     }
 
-    .ConteudoInformacoes1{
+    .ConteudoInformacoes{
         grid-template-columns: 1fr;
         gap: 24px;
     }
 
-    .InformacoesRota1{
+    .InformacoesRota{
         padding: 24px 6%;
     }
 
-    .ListaHorarios1{
+    .ListaHorarios{
         gap: 8px;
     }
 
-    .ListaHorarios1 li{
+    .ListaHorarios li{
         padding: 10px 6px;
         font-size: 16px;
     }
 
-    .EconomiaRota1{
+    .EconomiaRota{
         padding: 24px 0 0;
         border-left: none;
         border-top: solid 1px var(--cor-borda-informacoes);
     }
 }
 
-.Rota-2{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
 
-    width: 100%;
-    padding: 40px 5%;
-    border:solid 5px #40d64c;
-    border-radius: 30px;
-}
 
-.Rota-3{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
-
-    width: 100%;
-    padding: 40px 5%;
-    border:solid 5px #40d64c;
-    border-radius: 30px;
-}
-
-.Rota-4{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
-
-    width: 100%;
-    padding: 40px 5%;
-    border:solid 5px #40d64c;
-    border-radius: 30px;
-}
 
 button{
     padding: 15px 30px;
@@ -224,6 +192,51 @@ button:hover{
     background-color: #40d64c;
     color:black;
     cursor: pointer;
+}
+
+/* Estimativas por percurso; as fontes explicam a base do cálculo. */
+.ComparativoCO2{
+    margin: 20px 0 16px;
+}
+
+.ComparativoCO2 div{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: solid 1px var(--cor-borda-informacoes);
+}
+
+.ComparativoCO2 dd{
+    margin: 0;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.EconomiaRota .BaseComparativo,
+.FontesComparativo{
+    color: #536159;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.FontesComparativo{
+    margin-top: 14px;
+}
+
+.FontesComparativo summary{
+    color: var(--cor-texto-informacoes);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.FontesComparativo p{
+    padding-top: 10px;
+}
+
+.FontesComparativo a{
+    color: var(--cor-texto-informacoes);
 }
 
 .container {
