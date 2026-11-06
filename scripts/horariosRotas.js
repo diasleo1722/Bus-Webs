@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const botaoRota1 = document.getElementById("AcessarRota1");
-    const informacoesRota1 = document.getElementById("InformacoesRota1");
+    const botoesRotas = document.querySelectorAll(".AcessarRota");
 
-    // Abre e fecha os detalhes, informando o estado também aos leitores de tela.
-    botaoRota1.addEventListener("click", () => {
-        const abrirInformacoes = informacoesRota1.hidden;
+    // Cada botão controla somente a expansão indicada pelo seu aria-controls.
+    botoesRotas.forEach((botaoRota) => {
+        const informacoesRota = document.getElementById(botaoRota.getAttribute("aria-controls"));
 
-        informacoesRota1.hidden = !abrirInformacoes;
-        botaoRota1.setAttribute("aria-expanded", String(abrirInformacoes));
-        botaoRota1.textContent = abrirInformacoes ? "Fechar" : "Acessar";
+        botaoRota.addEventListener("click", () => {
+            const abrirInformacoes = informacoesRota.hidden;
+
+            informacoesRota.hidden = !abrirInformacoes;
+            botaoRota.setAttribute("aria-expanded", String(abrirInformacoes));
+            botaoRota.textContent = abrirInformacoes ? "Fechar" : "Acessar";
+        });
     });
 });

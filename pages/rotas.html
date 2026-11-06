@@ -17,28 +17,26 @@
     <!--Área onde fica As Rotas para o usuário selecionar-->
     <section>
         <h2>Selecione a sua Rota</h2>
-<main class="container">
-        <!--Primeira Rota-->
-        <br><br><div class="Rota-1">
-            <div class="ResumoRota1">
-                <div class="AreaImagem1">
-                    <img width="500px" src="../imagens/903, Vila Mendonca.png" alt="Ponto de ônibus da Praça Dr. Jaime de Oliveira">
-                </div>
+        <main class="container">
 
-                <div class="AreaTexto1">
-                    <P><b>Nome:</b> Praça Dr Jaime De Oliveira</P>
+        <!-- Rota 1: o botão abre os horários e o comparativo deste cartão. -->
+        <div class="Rota-1">
+            <div class="ResumoRota">
+                <div class="AreaImagem1 AreaImagemRota">
+                    <img width="500px" src="../imagens/903, Vila Mendonca.png" alt="Ponto de ônibus: Praça Dr Jaime De Oliveira">
+                </div>
+                <div class="AreaTexto1 AreaTextoRota">
+                    <p><b>Nome:</b> Praça Dr Jaime De Oliveira</p>
                     <p><b>Endereço:</b> 903, Vila Mendonca</p>
-                    <br><br><button type="button" id="AcessarRota1" aria-expanded="false" aria-controls="InformacoesRota1">Acessar</button>
+                    <br><br><button type="button" class="AcessarRota" id="AcessarRota1" aria-expanded="false" aria-controls="InformacoesRota1">Acessar</button>
                 </div>
             </div>
-
-            <!-- Expansão da primeira rota, aberta pelo botão Acessar. -->
-            <div class="InformacoesRota1" id="InformacoesRota1" role="region" aria-labelledby="TituloHorarios1" hidden>
-                <div class="ConteudoInformacoes1">
-                    <div class="HorariosRota1">
+            <div class="InformacoesRota" id="InformacoesRota1" role="region" aria-labelledby="TituloHorarios1" hidden>
+                <div class="ConteudoInformacoes">
+                    <div class="HorariosRota">
                         <h3 id="TituloHorarios1">Horários de saída</h3>
                         <p>Segunda a sexta-feira</p>
-                        <ul class="ListaHorarios1" aria-label="Horários simulados de saída">
+                        <ul class="ListaHorarios" aria-label="Horários simulados de saída">
                             <li><time datetime="06:00">06:00</time></li>
                             <li><time datetime="08:00">08:00</time></li>
                             <li><time datetime="10:00">10:00</time></li>
@@ -47,55 +45,162 @@
                             <li><time datetime="16:00">16:00</time></li>
                         </ul>
                     </div>
-
-                    <div class="EconomiaRota1">
+                    <div class="EconomiaRota">
                         <h3>Uma viagem mais sustentável</h3>
-                        <p class="ValorEconomia1">12 kg de CO₂</p>
-                        <p>a menos por viagem em comparação a um ônibus a diesel.</p>
+                        <p class="DistanciaPercurso">Percurso estimado (ida e volta): 8 km.</p>
+                        <p class="ValorEconomia">10,08 kg de CO₂</p>
+                        <p>a menos no escapamento neste percurso de ida e volta.</p>
+                        <dl class="ComparativoCO2">
+                            <div><dt>Ônibus a diesel</dt><dd>10,08 kg</dd></div>
+                            <div><dt>Elétrico a bateria</dt><dd>0 kg</dd></div>
+                        </dl>
+                        <p class="BaseComparativo">Não inclui geração de energia ou fabricação dos veículos.</p>
+                        <details class="FontesComparativo">
+                            <summary>Fontes do comparativo</summary>
+                            <p>A <a href="https://despoluir.org.br/wp-content/uploads/2025/07/Radar-CNT-do-Transporte-Comparativos-de-emissoes-no-transporte.pdf" target="_blank" rel="noopener noreferrer">CNT, página 3</a>, considera um ônibus urbano a diesel com 70 passageiros e 126 kg de CO₂ por 100 km. A <a href="https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/nova-versao-da-ferramenta-para-avaliacao-de-viabilidade-de-onibus-eletrico" target="_blank" rel="noopener noreferrer">EPE</a> descreve as emissões locais nulas dos ônibus elétricos a bateria. O cálculo multiplica 1,26 kg de CO₂ por km pelo percurso estimado de ida e volta indicado no cartão. As distâncias são exemplos do protótipo.</p>
+                        </details>
                     </div>
                 </div>
             </div>
-        </div><br><br>
+        </div>
 
-        <!--Segunda Rota-->
+        <!-- Rota 2: o botão abre os horários e o comparativo deste cartão. -->
         <div class="Rota-2">
-            <div class="AreaImagem2">
-                <img width="500px" src="../imagens/Av. Brasília, 990-992 - Vila Sao Paulo.png">
+            <div class="ResumoRota">
+                <div class="AreaImagem2 AreaImagemRota">
+                    <img width="500px" src="../imagens/Av. Brasília, 990-992 - Vila Sao Paulo.png" alt="Ponto de ônibus: McDonald's - Jardim Nova Yorque">
+                </div>
+                <div class="AreaTexto2 AreaTextoRota">
+                    <p><b>Nome:</b> McDonald's - Jardim Nova Yorque</p>
+                    <p><b>Endereço:</b> Av. Brasília, 990-992 - Vila Sao Paulo</p>
+                    <br><br><button type="button" class="AcessarRota" id="AcessarRota2" aria-expanded="false" aria-controls="InformacoesRota2">Acessar</button>
+                </div>
             </div>
-
-            <div class="AreaTexto2">
-                <P><b>Nome:</b> McDonald's - Jardim Nova Yorque</P>
-                <p><b>Endereço:</b> Av. Brasília, 990-992 - Vila Sao Paulo</p>
-                <br><br><button>Acessar</button>
-            </div>
-        </div><br><br>
-
-        <!--Terceira Rota-->
-        <div class="Rota-3">
-            <div class="AreaImagem3">
-                <img width="500px" src="../imagens/Terminal Rodoviário de Araçatuba.png">
-            </div>
-
-            <div class="AreaTexto3">
-                <P><b>Nome:</b> Terminal Rodoviário de Araçatuba</P>
-                <p><b>Endereço:</b> R. Liberdade - Vila Bandeirantes, 16015-520</p>
-                <br><br><button>Acessar</button>
-            </div>
-        </div><br><br>
-
-        <div class="Rota-4">
-            <div class="AreaImagem4">
-                <img width="500px" src="../imagens/Terminal Rodoviário Urbano Nelson Reis Alves.png">
-            </div>
-
-            <div class="AreaTexto4">
-                <P><b>Nome:</b> Terminal Rodoviário Urbano Nelson Reis Alves</P>
-                <p><b>Endereço:</b> R. Rosa Cury - São Joaquim, 16050-393</p>
-                <br><br><button>Acessar</button>
+            <div class="InformacoesRota" id="InformacoesRota2" role="region" aria-labelledby="TituloHorarios2" hidden>
+                <div class="ConteudoInformacoes">
+                    <div class="HorariosRota">
+                        <h3 id="TituloHorarios2">Horários de saída</h3>
+                        <p>Segunda a sexta-feira</p>
+                        <ul class="ListaHorarios" aria-label="Horários simulados de saída">
+                            <li><time datetime="06:30">06:30</time></li>
+                            <li><time datetime="08:30">08:30</time></li>
+                            <li><time datetime="10:30">10:30</time></li>
+                            <li><time datetime="12:30">12:30</time></li>
+                            <li><time datetime="14:30">14:30</time></li>
+                            <li><time datetime="16:30">16:30</time></li>
+                        </ul>
+                    </div>
+                    <div class="EconomiaRota">
+                        <h3>Uma viagem mais sustentável</h3>
+                        <p class="DistanciaPercurso">Percurso estimado (ida e volta): 10 km.</p>
+                        <p class="ValorEconomia">12,60 kg de CO₂</p>
+                        <p>a menos no escapamento neste percurso de ida e volta.</p>
+                        <dl class="ComparativoCO2">
+                            <div><dt>Ônibus a diesel</dt><dd>12,60 kg</dd></div>
+                            <div><dt>Elétrico a bateria</dt><dd>0 kg</dd></div>
+                        </dl>
+                        <p class="BaseComparativo">Não inclui geração de energia ou fabricação dos veículos.</p>
+                        <details class="FontesComparativo">
+                            <summary>Fontes do comparativo</summary>
+                            <p>A <a href="https://despoluir.org.br/wp-content/uploads/2025/07/Radar-CNT-do-Transporte-Comparativos-de-emissoes-no-transporte.pdf" target="_blank" rel="noopener noreferrer">CNT, página 3</a>, considera um ônibus urbano a diesel com 70 passageiros e 126 kg de CO₂ por 100 km. A <a href="https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/nova-versao-da-ferramenta-para-avaliacao-de-viabilidade-de-onibus-eletrico" target="_blank" rel="noopener noreferrer">EPE</a> descreve as emissões locais nulas dos ônibus elétricos a bateria. O cálculo multiplica 1,26 kg de CO₂ por km pelo percurso estimado de ida e volta indicado no cartão. As distâncias são exemplos do protótipo.</p>
+                        </details>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Rota 3: o botão abre os horários e o comparativo deste cartão. -->
+        <div class="Rota-3">
+            <div class="ResumoRota">
+                <div class="AreaImagem3 AreaImagemRota">
+                    <img width="500px" src="../imagens/Terminal Rodoviário de Araçatuba.png" alt="Ponto de ônibus: Terminal Rodoviário de Araçatuba">
+                </div>
+                <div class="AreaTexto3 AreaTextoRota">
+                    <p><b>Nome:</b> Terminal Rodoviário de Araçatuba</p>
+                    <p><b>Endereço:</b> R. Liberdade - Vila Bandeirantes, 16015-520</p>
+                    <br><br><button type="button" class="AcessarRota" id="AcessarRota3" aria-expanded="false" aria-controls="InformacoesRota3">Acessar</button>
+                </div>
+            </div>
+            <div class="InformacoesRota" id="InformacoesRota3" role="region" aria-labelledby="TituloHorarios3" hidden>
+                <div class="ConteudoInformacoes">
+                    <div class="HorariosRota">
+                        <h3 id="TituloHorarios3">Horários de saída</h3>
+                        <p>Segunda a sexta-feira</p>
+                        <ul class="ListaHorarios" aria-label="Horários simulados de saída">
+                            <li><time datetime="05:45">05:45</time></li>
+                            <li><time datetime="07:45">07:45</time></li>
+                            <li><time datetime="09:45">09:45</time></li>
+                            <li><time datetime="11:45">11:45</time></li>
+                            <li><time datetime="13:45">13:45</time></li>
+                            <li><time datetime="15:45">15:45</time></li>
+                        </ul>
+                    </div>
+                    <div class="EconomiaRota">
+                        <h3>Uma viagem mais sustentável</h3>
+                        <p class="DistanciaPercurso">Percurso estimado (ida e volta): 12 km.</p>
+                        <p class="ValorEconomia">15,12 kg de CO₂</p>
+                        <p>a menos no escapamento neste percurso de ida e volta.</p>
+                        <dl class="ComparativoCO2">
+                            <div><dt>Ônibus a diesel</dt><dd>15,12 kg</dd></div>
+                            <div><dt>Elétrico a bateria</dt><dd>0 kg</dd></div>
+                        </dl>
+                        <p class="BaseComparativo">Não inclui geração de energia ou fabricação dos veículos.</p>
+                        <details class="FontesComparativo">
+                            <summary>Fontes do comparativo</summary>
+                            <p>A <a href="https://despoluir.org.br/wp-content/uploads/2025/07/Radar-CNT-do-Transporte-Comparativos-de-emissoes-no-transporte.pdf" target="_blank" rel="noopener noreferrer">CNT, página 3</a>, considera um ônibus urbano a diesel com 70 passageiros e 126 kg de CO₂ por 100 km. A <a href="https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/nova-versao-da-ferramenta-para-avaliacao-de-viabilidade-de-onibus-eletrico" target="_blank" rel="noopener noreferrer">EPE</a> descreve as emissões locais nulas dos ônibus elétricos a bateria. O cálculo multiplica 1,26 kg de CO₂ por km pelo percurso estimado de ida e volta indicado no cartão. As distâncias são exemplos do protótipo.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rota 4: o botão abre os horários e o comparativo deste cartão. -->
+        <div class="Rota-4">
+            <div class="ResumoRota">
+                <div class="AreaImagem4 AreaImagemRota">
+                    <img width="500px" src="../imagens/Terminal Rodoviário Urbano Nelson Reis Alves.png" alt="Ponto de ônibus: Terminal Rodoviário Urbano Nelson Reis Alves">
+                </div>
+                <div class="AreaTexto4 AreaTextoRota">
+                    <p><b>Nome:</b> Terminal Rodoviário Urbano Nelson Reis Alves</p>
+                    <p><b>Endereço:</b> R. Rosa Cury - São Joaquim, 16050-393</p>
+                    <br><br><button type="button" class="AcessarRota" id="AcessarRota4" aria-expanded="false" aria-controls="InformacoesRota4">Acessar</button>
+                </div>
+            </div>
+            <div class="InformacoesRota" id="InformacoesRota4" role="region" aria-labelledby="TituloHorarios4" hidden>
+                <div class="ConteudoInformacoes">
+                    <div class="HorariosRota">
+                        <h3 id="TituloHorarios4">Horários de saída</h3>
+                        <p>Segunda a sexta-feira</p>
+                        <ul class="ListaHorarios" aria-label="Horários simulados de saída">
+                            <li><time datetime="07:00">07:00</time></li>
+                            <li><time datetime="09:00">09:00</time></li>
+                            <li><time datetime="11:00">11:00</time></li>
+                            <li><time datetime="13:00">13:00</time></li>
+                            <li><time datetime="15:00">15:00</time></li>
+                            <li><time datetime="17:00">17:00</time></li>
+                        </ul>
+                    </div>
+                    <div class="EconomiaRota">
+                        <h3>Uma viagem mais sustentável</h3>
+                        <p class="DistanciaPercurso">Percurso estimado (ida e volta): 14 km.</p>
+                        <p class="ValorEconomia">17,64 kg de CO₂</p>
+                        <p>a menos no escapamento neste percurso de ida e volta.</p>
+                        <dl class="ComparativoCO2">
+                            <div><dt>Ônibus a diesel</dt><dd>17,64 kg</dd></div>
+                            <div><dt>Elétrico a bateria</dt><dd>0 kg</dd></div>
+                        </dl>
+                        <p class="BaseComparativo">Não inclui geração de energia ou fabricação dos veículos.</p>
+                        <details class="FontesComparativo">
+                            <summary>Fontes do comparativo</summary>
+                            <p>A <a href="https://despoluir.org.br/wp-content/uploads/2025/07/Radar-CNT-do-Transporte-Comparativos-de-emissoes-no-transporte.pdf" target="_blank" rel="noopener noreferrer">CNT, página 3</a>, considera um ônibus urbano a diesel com 70 passageiros e 126 kg de CO₂ por 100 km. A <a href="https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/nova-versao-da-ferramenta-para-avaliacao-de-viabilidade-de-onibus-eletrico" target="_blank" rel="noopener noreferrer">EPE</a> descreve as emissões locais nulas dos ônibus elétricos a bateria. O cálculo multiplica 1,26 kg de CO₂ por km pelo percurso estimado de ida e volta indicado no cartão. As distâncias são exemplos do protótipo.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
     </section>
-</main>
+
     <footer></footer>    
     <script type= "module" src="../scripts/navBarPages.js"></script>
     <script src="../scripts/horariosRotas.js"></script>
