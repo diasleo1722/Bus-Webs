@@ -1,246 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap');
 
-*{
-    box-sizing: border-box;
-    background-color: white;
+*{ box-sizing: border-box; }
+body{ margin: 0; font-family: "Roboto", sans-serif; background: #f3f6f3; color: #21352b; }
+section{ width: 100%; max-width: 1144px; margin: 64px auto 96px; padding: 0 32px; }
+section > h2{ margin: 0 0 40px; font-size: clamp(30px, 4vw, 44px); letter-spacing: -1.2px; color: #173f2c; }
+.container{ width: 100%; margin: 0; }
+
+/* Paleta verde escura e menos saturada, compartilhada pelos quatro cartões. */
+.Rota-1, .Rota-2, .Rota-3, .Rota-4{
+    --cor-fundo-informacoes: #2b5545;
+    --cor-texto-informacoes: #b7dcaa;
+    --cor-borda-informacoes: #658471;
+    width: 100%; overflow: hidden; margin-top: 32px; background: #244c3e; color: #f0f5f1; border: 1px solid #658471; border-radius: 24px;
 }
+.ResumoRota{ display: grid; grid-template-columns: .9fr 1fr; gap: 36px; padding: 36px; align-items: center; }
+.AreaImagemRota, .AreaTextoRota{ min-width: 0; }
+.AreaImagemRota{ order: 2; }
+.AreaTextoRota{ order: 1; }
+.AreaImagemRota img{ display: block; width: 100%; height: 240px; object-fit: cover; border-radius: 60px 12px 12px 12px; }
+.AreaTextoRota{ padding: 0; }
+.NumeroRota{ margin: 0 0 12px; color: #b7dcaa; font-size: 12px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; }
+.NomeRota{ margin: 0; font-size: 32px; line-height: 1.2; letter-spacing: -.6px; }
+.EnderecoRota{ margin: 14px 0 24px; color: #cad8cf; font-size: 15px; line-height: 1.5; }
+.AcessarRota{ display: inline-flex; justify-content: center; align-items: center; gap: 18px; min-height: 46px; padding: 12px 20px; border: 1px solid #b7dcaa; border-radius: 6px; background: #b7dcaa; color: #18372e; font: 600 14px "Roboto", sans-serif; cursor: pointer; transition: background .18s ease; }
+.AcessarRota::after{ content: ''; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); }
+.AcessarRota[aria-expanded="true"]::after{ transform: rotate(225deg) translate(-2px, -1px); }
+.AcessarRota:hover{ background: #cde8c3; }
+.AcessarRota:focus-visible, .FontesComparativo summary:focus-visible, .FontesComparativo a:focus-visible{ outline: 3px solid var(--cor-texto-informacoes); outline-offset: 4px; }
+.InformacoesRota{ padding: 28px 32px; background: var(--cor-fundo-informacoes); border-top: 1px solid var(--cor-borda-informacoes); }
+.InformacoesRota[hidden]{ display: none; }
+.ConteudoInformacoes{ display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.InformacoesRota h3{ margin: 0 0 10px; color: var(--cor-texto-informacoes); font-size: 18px; line-height: 1.35; }
+.InformacoesRota p{ margin: 0; font-size: 15px; line-height: 1.6; }
+.ListaHorarios{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
+.ListaHorarios li{ padding: 12px 6px; background: #365f4d; border: 1px solid var(--cor-borda-informacoes); border-radius: 8px; color: var(--cor-texto-informacoes); text-align: center; font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.EconomiaRota{ padding-left: 32px; border-left: 1px solid var(--cor-borda-informacoes); }
+.EconomiaRota .ValorEconomia{ margin: 16px 0 6px; color: var(--cor-texto-informacoes); font-size: clamp(24px, 2.5vw, 34px); font-weight: 900; letter-spacing: -.8px; line-height: 1.25; }
+.ComparativoCO2{ margin: 24px 0 16px; font-size: 14px; }
+.ComparativoCO2 div{ display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--cor-borda-informacoes); }
+.ComparativoCO2 dd{ margin: 0; font-weight: 700; white-space: nowrap; }
+.EconomiaRota .BaseComparativo, .FontesComparativo, .FontesComparativo p{ color: #cad8cf; font-size: 13px; line-height: 1.6; }
+.FontesComparativo{ margin-top: 16px; }
+.FontesComparativo summary{ color: var(--cor-texto-informacoes); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.FontesComparativo p{ padding-top: 10px; }
+.FontesComparativo a{ color: var(--cor-texto-informacoes); }
 
-body{
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-}
-
-section{
-    display: block;
-    margin-top: 80px;
-    padding: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-    width: 90%;
-}
-
-section h2{
-    width: 100%;
-    font-size: 50px;
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    color: #40d64c;
-}
-
-.Rota-1,
-.Rota-2,
-.Rota-3,
-.Rota-4{
-    --cor-fundo-informacoes: #f4faf5;
-    --cor-texto-informacoes: #23743c;
-    --cor-borda-informacoes: #cfe2d4;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border:solid 5px #40d64c;
-    border-radius: 30px;
-    overflow: hidden;
-    margin-top: 36px;
-}
-
-/* Mantém o resumo e a expansão dentro da mesma borda de cada cartão. */
-.ResumoRota{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
-    width: 100%;
-    padding: 40px 5%;
-}
-
-.AreaImagemRota{
-    flex: 1;
-    min-width: 0;
-}
-
-.AreaImagemRota img{
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-}
-
-.AreaTextoRota{
-    flex: 1;
-    min-width: 0;
-}
-
-.InformacoesRota{
-    width: 100%;
-    padding: 28px 5%;
-    border-top: solid 2px var(--cor-borda-informacoes);
-    background-color: var(--cor-fundo-informacoes);
-    text-align: left;
-}
-
-.InformacoesRota[hidden]{
-    display: none;
-}
-
-.ConteudoInformacoes{
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 32px;
-}
-
-.InformacoesRota h3{
-    margin: 0 0 8px;
-    color: var(--cor-texto-informacoes);
-    font-size: 20px;
-}
-
-.InformacoesRota p{
-    margin: 0;
-    line-height: 1.5;
-}
-
-.ListaHorarios{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 0;
-    margin: 20px 0 0;
-    list-style: none;
-}
-
-.ListaHorarios li{
-    padding: 10px;
-    border: solid 1px var(--cor-borda-informacoes);
-    border-radius: 6px;
-    background-color: white;
-    color: var(--cor-texto-informacoes);
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.EconomiaRota{
-    padding-left: 32px;
-    border-left: solid 1px var(--cor-borda-informacoes);
-}
-
-.EconomiaRota .ValorEconomia{
-    margin: 16px 0 8px;
-    color: var(--cor-texto-informacoes);
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.AcessarRota:focus-visible{
-    outline: solid 3px var(--cor-texto-informacoes);
-    outline-offset: 4px;
-}
-
-/* Adapta os cartões e suas expansões para telas menores. */
 @media (max-width: 700px){
-    .ResumoRota{
-        flex-direction: column;
-        gap: 20px;
-        padding: 24px 6%;
-    }
-
-    .AreaImagemRota,
-    .AreaTextoRota{
-        width: 100%;
-    }
-
-    .ConteudoInformacoes{
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .InformacoesRota{
-        padding: 24px 6%;
-    }
-
-    .ListaHorarios{
-        gap: 8px;
-    }
-
-    .ListaHorarios li{
-        padding: 10px 6px;
-        font-size: 16px;
-    }
-
-    .EconomiaRota{
-        padding: 24px 0 0;
-        border-left: none;
-        border-top: solid 1px var(--cor-borda-informacoes);
-    }
+    section{ margin-top: 40px; padding: 0 20px; }
+    section > h2{ margin-bottom: 28px; }
+    .ResumoRota{ display: flex; flex-direction: column; gap: 24px; padding: 18px; }
+    .AreaImagemRota, .AreaTextoRota{ width: 100%; }
+    .AreaImagemRota img{ height: 200px; border-radius: 40px 8px 8px 8px; }
+    .AreaImagemRota{ order: 0; }
+    .AreaTextoRota{ padding: 0 4px 6px; }
+    .NomeRota{ font-size: 27px; }
+    .InformacoesRota{ padding: 24px 22px; }
+    .ConteudoInformacoes{ grid-template-columns: 1fr; gap: 28px; }
+    .EconomiaRota{ padding: 24px 0 0; border-left: 0; border-top: 1px solid var(--cor-borda-informacoes); }
+    .EconomiaRota .ValorEconomia{ font-size: 27px; }
+    .ListaHorarios li{ font-size: 16px; }
+    .pagina-rotas .navbar{ height: auto; padding: 12px 20px; }
+    .pagina-rotas .nav-bar-links{ flex-wrap: wrap; row-gap: 8px; }
+    .pagina-rotas .nav-bar-links li:first-child{ flex-basis: calc(100% - 80px); }
+    .pagina-rotas .nav-bar-links li:not(:first-child){ flex: 1; text-align: center; }
+    .pagina-rotas .nav-bar-links a{ display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 8px; font-size: 14px; }
 }
 
-
-
-
-button{
-    padding: 15px 30px;
-    border-radius: 5px;
-    background-color: black;
-    color:white;
-    text-decoration: none;
-}
-
-button:hover{
-    background-color: #40d64c;
-    color:black;
-    cursor: pointer;
-}
-
-/* Estimativas por percurso; as fontes explicam a base do cálculo. */
-.ComparativoCO2{
-    margin: 20px 0 16px;
-}
-
-.ComparativoCO2 div{
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: solid 1px var(--cor-borda-informacoes);
-}
-
-.ComparativoCO2 dd{
-    margin: 0;
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-.EconomiaRota .BaseComparativo,
-.FontesComparativo{
-    color: #536159;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.FontesComparativo{
-    margin-top: 14px;
-}
-
-.FontesComparativo summary{
-    color: var(--cor-texto-informacoes);
-    cursor: pointer;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.FontesComparativo p{
-    padding-top: 10px;
-}
-
-.FontesComparativo a{
-    color: var(--cor-texto-informacoes);
-}
-
-.container {
-  width: min(100% - 32px, 1000px);
-  margin: 32px auto;
-}
+@media (prefers-reduced-motion: reduce){ .AcessarRota{ transition: none; } }
