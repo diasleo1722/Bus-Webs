@@ -30,16 +30,147 @@ section h2{
 }
 
 .Rota-1{
+    --cor-fundo-informacoes: #f4faf5;
+    --cor-texto-informacoes: #23743c;
+    --cor-borda-informacoes: #cfe2d4;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border:solid 5px #40d64c;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+/* Mantém o resumo e a expansão dentro da mesma borda do primeiro cartão. */
+.ResumoRota1{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 70px;
-
     width: 100%;
     padding: 40px 5%;
-    border:solid 5px #40d64c;
-    border-radius: 30px;
+}
+
+.AreaImagem1{
+    flex: 1;
+    min-width: 0;
+}
+
+.AreaImagem1 img{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.AreaTexto1{
+    flex: 1;
+    min-width: 0;
+}
+
+.InformacoesRota1{
+    width: 100%;
+    padding: 28px 5%;
+    border-top: solid 2px var(--cor-borda-informacoes);
+    background-color: var(--cor-fundo-informacoes);
+    text-align: left;
+}
+
+.InformacoesRota1[hidden]{
+    display: none;
+}
+
+.ConteudoInformacoes1{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+}
+
+.InformacoesRota1 h3{
+    margin: 0 0 8px;
+    color: var(--cor-texto-informacoes);
+    font-size: 20px;
+}
+
+.InformacoesRota1 p{
+    margin: 0;
+    line-height: 1.5;
+}
+
+.ListaHorarios1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 0;
+    margin: 20px 0 0;
+    list-style: none;
+}
+
+.ListaHorarios1 li{
+    padding: 10px;
+    border: solid 1px var(--cor-borda-informacoes);
+    border-radius: 6px;
+    background-color: white;
+    color: var(--cor-texto-informacoes);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.EconomiaRota1{
+    padding-left: 32px;
+    border-left: solid 1px var(--cor-borda-informacoes);
+}
+
+.EconomiaRota1 .ValorEconomia1{
+    margin: 16px 0 8px;
+    color: var(--cor-texto-informacoes);
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#AcessarRota1:focus-visible{
+    outline: solid 3px var(--cor-texto-informacoes);
+    outline-offset: 4px;
+}
+
+/* Adapta somente o primeiro cartão e sua expansão para telas menores. */
+@media (max-width: 700px){
+    .ResumoRota1{
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px 6%;
+    }
+
+    .AreaImagem1,
+    .AreaTexto1{
+        width: 100%;
+    }
+
+    .ConteudoInformacoes1{
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .InformacoesRota1{
+        padding: 24px 6%;
+    }
+
+    .ListaHorarios1{
+        gap: 8px;
+    }
+
+    .ListaHorarios1 li{
+        padding: 10px 6px;
+        font-size: 16px;
+    }
+
+    .EconomiaRota1{
+        padding: 24px 0 0;
+        border-left: none;
+        border-top: solid 1px var(--cor-borda-informacoes);
+    }
 }
 
 .Rota-2{
