@@ -181,3 +181,8 @@
         font-size: clamp(18px, 5vw, 20px);
     }
 }
+
+.container {
+  width: min(100% - 32px, 1000px);
+  margin: 32px auto;
+}

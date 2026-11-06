@@ -11,7 +11,7 @@ font-size: 25px;
 
 h2{ font-weight: 900;
     color: #40d64c;
-    
+    text-align: center;
 }
 
 .proposito{font-size: 40px;
@@ -28,3 +28,9 @@ margin: 25px;
 font-size: 25px;
 }
 
+a{text-align: center;}
+
+.container {
+  width: min(100% - 32px, 1000px);
+  margin: 32px auto;
+}
