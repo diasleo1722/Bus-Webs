@@ -12,7 +12,7 @@ body{
 }
 
 section{
-    background-color: white;
+    background: linear-gradient(135deg,#ffffff,#f0fff3,#e5f7e9);
     width: 100%;
 }
 
@@ -35,16 +35,18 @@ section{
 
 .areaTexto h2{
     font-weight: 900;
-    color: #40d64c; 
+
 }
 
 .titulo-menor{
     font-size: 20px;
     letter-spacing: 15px;
+    color: #40d64c; 
 }
 
 .titulo-principal{
     font-size: 80px;
+    color: #147A42;
 }
 
 .areaTexto p{
@@ -62,5 +64,12 @@ section{
     display: block;
     width: 100%;
     height: auto;
-    padding-top: 250px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+    transition: 0.4s ease;
+}
+
+.areaImagem img:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.20);
 }
