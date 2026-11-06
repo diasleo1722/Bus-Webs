@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+section{
+    display: block;
+    margin-top: 80px;
+    padding: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    width: 90%;
+}
+
+section h2{
+    width: 100%;
+    font-size: 50px;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: #40d64c;
+}
+
+.Rota-1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    width: 100%;
+    padding: 40px 5%;
+    border:solid 5px #40d64c;
+    border-radius: 30px;
+}
+
+.Rota-2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    width: 100%;
+    padding: 40px 5%;
+    border:solid 5px #40d64c;
+    border-radius: 30px;
+}
+
+.Rota-3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    width: 100%;
+    padding: 40px 5%;
+    border:solid 5px #40d64c;
+    border-radius: 30px;
+}
+
+.Rota-4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    width: 100%;
+    padding: 40px 5%;
+    border:solid 5px #40d64c;
+    border-radius: 30px;
+}
+
+button{
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-color: black;
+    color:white;
+    text-decoration: none;
+}
+
+button:hover{
+    background-color: #40d64c;
+    color:black;
+    cursor: pointer;
+}
