@@ -6,20 +6,20 @@
     <title>Rotas | BusWebs</title>
     <link rel="stylesheet" href="../style/nav-bar-style.css">
     <link rel="stylesheet" href="../style/rotas-style.css">
-    <link rel="shortcut icon" href="/imagens/fav/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../imagens/fav/favicon.png" type="image/x-icon">
 </head>
 <body class="pagina-rotas">
-    <nav class="navbar">
-        <ul class="nav-bar-links">
-        </ul>
-    </nav>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <nav class="navbar" aria-label="Navegação principal"><ul class="nav-bar-links"></ul></nav>
 
     <!--Área onde fica As Rotas para o usuário selecionar-->
     <section>
-        <h2>Selecione a sua Rota</h2>
-        <main class="container">
+        <h1>Rotas de exemplo</h1>
+        <p class="AvisoRotas">Trajetos, horários e distâncias são exemplos fictícios do protótipo, não linhas ou horários oficiais.</p>
+        <p class="NotaEmissoes">Base do comparativo: a CNT estima 126 kg de CO₂ por 100 km para ônibus urbano a diesel (<a href="https://despoluir.org.br/wp-content/uploads/2025/07/Radar-CNT-do-Transporte-Comparativos-de-emissoes-no-transporte.pdf" target="_blank" rel="noopener noreferrer">p. 3</a>), ou 1,26 kg/km. Multiplicamos esse fator pela distância de ida e volta exibida em cada exemplo. Ônibus elétricos a bateria não têm emissões locais pelo escapamento (<a href="https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/nova-versao-da-ferramenta-para-avaliacao-de-viabilidade-de-onibus-eletrico" target="_blank" rel="noopener noreferrer">EPE</a>); geração de eletricidade e fabricação não estão incluídas.</p>
+        <main class="container" id="conteudo">
 
-        <!-- Rota 1: o botão abre os horários e o comparativo deste cartão. -->
+        <!-- Rota 1: horários e comparativo aparecem junto ao trajeto. -->
         <div class="Rota-1" role="article" aria-labelledby="TituloRota1">
             <div class="ResumoRota">
                 <div class="AreaImagem1 AreaImagemRota">
@@ -29,14 +29,14 @@
                     <p class="NumeroRota">Rota 01</p>
                     <h3 class="NomeRota" id="TituloRota1">Praça Dr Jaime De Oliveira</h3>
                     <p class="EnderecoRota">903, Vila Mendonca</p>
-                    <button type="button" class="AcessarRota" id="AcessarRota1" aria-expanded="false" aria-controls="InformacoesRota1">Acessar</button>
+                    <p class="TrechoRota"><strong>Percurso fictício:</strong> Terminal Urbano Nelson Reis Alves ↔ Praça Dr. Jaime de Oliveira · 8 km (ida e volta).</p>
                 </div>
             </div>
-            <div class="InformacoesRota" id="InformacoesRota1" role="region" aria-labelledby="TituloHorarios1" hidden>
+            <div class="InformacoesRota" id="InformacoesRota1" role="region" aria-labelledby="TituloHorarios1">
                 <div class="ConteudoInformacoes">
                     <div class="HorariosRota">
                         <h3 id="TituloHorarios1">Horários de saída</h3>
-                        <p>Segunda a sexta-feira</p>
+                        <p>Dias úteis · saídas simuladas a cada 2 horas.</p>
                         <ul class="ListaHorarios" aria-label="Horários simulados de saída">
                             <li><time datetime="06:00">06:00</time></li>
                             <li><time datetime="08:00">08:00</time></li>
@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <!-- Rota 2: o botão abre os horários e o comparativo deste cartão. -->
+        <!-- Rota 2: horários e comparativo aparecem junto ao trajeto. -->
         <div class="Rota-2" role="article" aria-labelledby="TituloRota2">
             <div class="ResumoRota">
                 <div class="AreaImagem2 AreaImagemRota">
@@ -74,15 +74,15 @@
                 <div class="AreaTexto2 AreaTextoRota">
                     <p class="NumeroRota">Rota 02</p>
                     <h3 class="NomeRota" id="TituloRota2">McDonald's - Jardim Nova Yorque</h3>
-                    <p class="EnderecoRota">Av. Brasília, 990-992 - Vila Sao Paulo</p>
-                    <button type="button" class="AcessarRota" id="AcessarRota2" aria-expanded="false" aria-controls="InformacoesRota2">Acessar</button>
+                    <p class="EnderecoRota">Av. Brasília, 990-992 - Vila São Paulo</p>
+                    <p class="TrechoRota"><strong>Percurso fictício:</strong> Praça Dr. Jaime de Oliveira ↔ McDonald’s, Jardim Nova Yorque · 10 km (ida e volta).</p>
                 </div>
             </div>
-            <div class="InformacoesRota" id="InformacoesRota2" role="region" aria-labelledby="TituloHorarios2" hidden>
+            <div class="InformacoesRota" id="InformacoesRota2" role="region" aria-labelledby="TituloHorarios2">
                 <div class="ConteudoInformacoes">
                     <div class="HorariosRota">
                         <h3 id="TituloHorarios2">Horários de saída</h3>
-                        <p>Segunda a sexta-feira</p>
+                        <p>Dias úteis · saídas simuladas a cada 2 horas.</p>
                         <ul class="ListaHorarios" aria-label="Horários simulados de saída">
                             <li><time datetime="06:30">06:30</time></li>
                             <li><time datetime="08:30">08:30</time></li>
@@ -111,7 +111,7 @@
             </div>
         </div>
 
-        <!-- Rota 3: o botão abre os horários e o comparativo deste cartão. -->
+        <!-- Rota 3: horários e comparativo aparecem junto ao trajeto. -->
         <div class="Rota-3" role="article" aria-labelledby="TituloRota3">
             <div class="ResumoRota">
                 <div class="AreaImagem3 AreaImagemRota">
@@ -121,14 +121,14 @@
                     <p class="NumeroRota">Rota 03</p>
                     <h3 class="NomeRota" id="TituloRota3">Terminal Rodoviário de Araçatuba</h3>
                     <p class="EnderecoRota">R. Liberdade - Vila Bandeirantes, 16015-520</p>
-                    <button type="button" class="AcessarRota" id="AcessarRota3" aria-expanded="false" aria-controls="InformacoesRota3">Acessar</button>
+                    <p class="TrechoRota"><strong>Percurso fictício:</strong> Praça Dr. Jaime de Oliveira ↔ Terminal Rodoviário de Araçatuba · 12 km (ida e volta).</p>
                 </div>
             </div>
-            <div class="InformacoesRota" id="InformacoesRota3" role="region" aria-labelledby="TituloHorarios3" hidden>
+            <div class="InformacoesRota" id="InformacoesRota3" role="region" aria-labelledby="TituloHorarios3">
                 <div class="ConteudoInformacoes">
                     <div class="HorariosRota">
                         <h3 id="TituloHorarios3">Horários de saída</h3>
-                        <p>Segunda a sexta-feira</p>
+                        <p>Dias úteis · saídas simuladas a cada 2 horas.</p>
                         <ul class="ListaHorarios" aria-label="Horários simulados de saída">
                             <li><time datetime="05:45">05:45</time></li>
                             <li><time datetime="07:45">07:45</time></li>
@@ -157,7 +157,7 @@
             </div>
         </div>
 
-        <!-- Rota 4: o botão abre os horários e o comparativo deste cartão. -->
+        <!-- Rota 4: horários e comparativo aparecem junto ao trajeto. -->
         <div class="Rota-4" role="article" aria-labelledby="TituloRota4">
             <div class="ResumoRota">
                 <div class="AreaImagem4 AreaImagemRota">
@@ -167,14 +167,14 @@
                     <p class="NumeroRota">Rota 04</p>
                     <h3 class="NomeRota" id="TituloRota4">Terminal Rodoviário Urbano Nelson Reis Alves</h3>
                     <p class="EnderecoRota">R. Rosa Cury - São Joaquim, 16050-393</p>
-                    <button type="button" class="AcessarRota" id="AcessarRota4" aria-expanded="false" aria-controls="InformacoesRota4">Acessar</button>
+                    <p class="TrechoRota"><strong>Percurso fictício:</strong> Terminal Rodoviário de Araçatuba ↔ Terminal Urbano Nelson Reis Alves · 14 km (ida e volta).</p>
                 </div>
             </div>
-            <div class="InformacoesRota" id="InformacoesRota4" role="region" aria-labelledby="TituloHorarios4" hidden>
+            <div class="InformacoesRota" id="InformacoesRota4" role="region" aria-labelledby="TituloHorarios4">
                 <div class="ConteudoInformacoes">
                     <div class="HorariosRota">
                         <h3 id="TituloHorarios4">Horários de saída</h3>
-                        <p>Segunda a sexta-feira</p>
+                        <p>Dias úteis · saídas simuladas a cada 2 horas.</p>
                         <ul class="ListaHorarios" aria-label="Horários simulados de saída">
                             <li><time datetime="07:00">07:00</time></li>
                             <li><time datetime="09:00">09:00</time></li>
@@ -205,8 +205,13 @@
         </main>
     </section>
 
-    <footer></footer>    
-    <script type= "module" src="../scripts/navBarPages.js"></script>
-    <script src="../scripts/horariosRotas.js"></script>
+    <footer class="rodape-site"><p>Bus-Web · Projeto Ideathon FATEC Araçatuba</p></footer>
+    <script type= "module" src="../scripts/navBar.js"></script>
 </body>
 </html>
+
+
+
+
+
+

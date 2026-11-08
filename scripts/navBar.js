@@ -1,65 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const navBarLinks = [
-        "Logo",
-        "Invert",
-        "Rotas",
-        "Mapa",
-        "Contato",
-        "Sobre"
-    ];
-    const navBar = document.getElementsByClassName("nav-bar-links")[0];
+    const nav = document.querySelector(".nav-bar-links");
+    if (!nav) return;
 
-    // Define uma variável para definir o estado de inversão de cores.
-    const invertColorsFlag = localStorage.getItem("invertColors") === "true";
-    if (invertColorsFlag) {
-        document.body.style.filter = "invert(100%)";
+    const isSubpage = window.location.pathname.includes("/pages/");
+    const base = isSubpage ? "../" : "";
+    const links = [
+        { label: "Página inicial", href: `${base}index.html` },
+        { label: "Rotas", href: `${base}pages/rotas.html` },
+        { label: "Mapa", href: `${base}pages/mapa.html` },
+        { label: "Sobre", href: `${base}pages/sobre.html` },
+    ];
+
+    const logoItem = document.createElement("li");
+    logoItem.className = "nav-logo";
+    const logo = document.createElement("a");
+    logo.href = `${base}index.html`;
+    logo.setAttribute("aria-label", "Bus-Web — página inicial");
+    const image = document.createElement("img");
+    image.src = `${base}imagens/logo/logobus.svg`;
+    image.alt = "Bus-Web";
+    logo.append(image);
+    logoItem.append(logo);
+    nav.append(logoItem);
+
+    for (const item of links) {
+        const li = document.createElement("li");
+        const anchor = document.createElement("a");
+        anchor.href = item.href;
+        anchor.textContent = item.label;
+        if (window.location.pathname.endsWith(item.href.replace(base, ""))) {
+            anchor.setAttribute("aria-current", "page");
+        }
+        li.append(anchor);
+        nav.append(li);
     }
 
-    navBarLinks.forEach((textoAtual, indice) => {
-        const elemento = document.createElement("li");
-        const icone = document.createElement("img");
-        const link = document.createElement("a");
-
-        if (textoAtual == "Invert") {
-            icone.src = document.body.style.filter === "invert(100%)" ? "imagens/logo/inverter-cores-off.svg" : "imagens/logo/inverter-cores.svg";
-            icone.alt = link.title = "Inverter cores";
-            icone.style.width = "40px";
-            icone.onclick = () => {
-                document.body.style.filter = document.body.style.filter === "invert(100%)" ? "none" : "invert(100%)";
-                icone.src = document.body.style.filter === "invert(100%)" ? "imagens/logo/inverter-cores-off.svg" : "imagens/logo/inverter-cores.svg";
-
-                // Define o estado de inversão de cores no localStorage para que seja mantido entre as sessões.
-                localStorage.setItem("invertColors", document.body.style.filter === "invert(100%)" ? "true" : "false");
-            }
-            icone.style.cursor = "pointer";
-            link.appendChild(icone);
-            navBar.appendChild(link);
-            return;
-        }
-        else {
-            link.title = `Acessar ${textoAtual}`;
-        }
-        link.href = `pages/${textoAtual.toLowerCase()}.html`;
-
-        if (textoAtual == "Logo") {
-            const img = document.createElement("img");
-            img.src = `imagens/logo/logobus.svg`;
-            // Descreve o destino do logo para quem usa leitor de tela.
-            img.alt = "Bus-Web — início";
-            link.href = `index.html`
-
-            link.appendChild(img);
-        }
-        else {
-            link.textContent = textoAtual;
-        }
-
-        // Identifica a página atual para acessibilidade e destaque visual.
-        if (link.pathname === window.location.pathname) {
-            link.setAttribute("aria-current", "page");
-        }
-
-        elemento.appendChild(link);
-        navBar.appendChild(elemento);
+    const accessItem = document.createElement("li");
+    accessItem.className = "nav-acessibilidade";
+    const accessButton = document.createElement("button");
+    accessButton.type = "button";
+    accessButton.className = "botao-acessibilidade";
+    accessButton.textContent = "Modo daltônico";
+    accessButton.title = "Adapta a paleta para facilitar a distinção de cores na deuteranopia.";
+    accessButton.setAttribute("aria-pressed", String(localStorage.getItem("modoDaltonismo") === "true"));
+    document.body.classList.toggle("modo-daltonismo", accessButton.getAttribute("aria-pressed") === "true");
+    accessButton.addEventListener("click", () => {
+        const active = document.body.classList.toggle("modo-daltonismo");
+        accessButton.setAttribute("aria-pressed", String(active));
+        localStorage.setItem("modoDaltonismo", String(active));
     });
+    accessItem.append(accessButton);
+    nav.append(accessItem);
 });
+
+
+
+
+
+
+

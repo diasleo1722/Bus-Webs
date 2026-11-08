@@ -1,62 +1,57 @@
-/* Cores fixas para facilitar na hora de alterar */
-:root{
-    --cor-fundo-principal: #ffffff;
-    --cor-fundo-secundaria: ;
-    --cor-passar-mouse-link: #007bff;
-    --cor-link: #333333;
+:root {
+    color-scheme: light;
+    --verde-900: #143c2c;
+    --verde-700: #237447;
+    --verde-600: #318451;
+    --verde-100: #eaf3ec;
+    --texto: #1d2c23;
+    --texto-suave: #526158;
+    --superficie: #fff;
 }
-/* Navbar */
-.navbar {
-    width: 100%;
-    height: 80px;
-    background-color: var(--cor-fundo-principal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 40px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--texto); background: #f5f7f4; font-family: Inter, "Segoe UI", Arial, sans-serif; line-height: 1.6; }
+.navbar { position: sticky; z-index: 10; top: 0; width: 100%; min-height: 78px; display: flex; align-items: center; justify-content: center; padding: 10px 28px; background: rgb(255 255 255 / 96%); border-bottom: 1px solid #e3e9e3; box-shadow: 0 4px 18px rgb(22 45 31 / 5%); }
+.nav-bar-links { width: min(1160px, 100%); display: flex; align-items: center; justify-content: flex-end; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.nav-bar-links .nav-logo { margin-right: auto; }
+.nav-bar-links img { display: block; width: 126px; height: 54px; object-fit: contain; }
+.nav-bar-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 9px 13px; border-radius: 8px; color: #34463a; font-size: 15px; font-weight: 650; text-decoration: none; transition: color .18s ease, background .18s ease; }
+.nav-bar-links a:hover, .nav-bar-links a[aria-current="page"] { color: var(--verde-700); background: var(--verde-100); }
+.botao-acessibilidade { min-height: 44px; padding: 9px 13px; border: 1px solid #b9c8bc; border-radius: 8px; background: white; color: var(--verde-900); font: inherit; font-size: 14px; font-weight: 650; cursor: pointer; }
+.botao-acessibilidade[aria-pressed="true"] { color: white; background: var(--verde-900); border-color: var(--verde-900); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #d18a13; outline-offset: 3px; }
+.rodape-site { padding: 22px; background: #143c2c; color: #e4eee6; text-align: center; font-size: 14px; }
+.rodape-site p { margin: 0; }
+.skip-link { position: absolute; z-index: 20; top: -100px; left: 16px; padding: 10px 14px; border-radius: 6px; background: #143c2c; color: #fff; font-weight: 700; }
+.skip-link:focus { top: 12px; }
+
+@media (max-width: 700px) {
+    .navbar { position: relative; padding: 10px 16px; }
+    .nav-bar-links { flex-wrap: wrap; justify-content: center; gap: 2px; }
+    .nav-bar-links .nav-logo { flex: 1 0 100%; margin: 0 0 4px; text-align: center; }
+    .nav-bar-links img { margin: auto; }
+    .nav-bar-links a { padding: 8px 9px; font-size: 14px; }
 }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
 
-/* Lista de links */
-.nav-bar-links {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Logo */
-.nav-bar-links img {
-    width: 130px;
-    height: auto;
-    cursor: pointer;
-}
-
-/* Links */
-.nav-bar-links a {
-    text-decoration: none;
-    color: var(--cor-link);
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 15px;
-    transition: 0.3s ease; /* TEMPO PARA MUDAR A COR NO HOVER E VOLTAR A ORIGINAL*/
-    position: relative;
-}
-
-/* Joga o icone para a esquerda movendo todo o resto para direita */
-.nav-bar-links li:first-child {
-    margin-right: auto;
-}
-
-/* Efeito do hover (somente mudar a cor)*/
-.nav-bar-links a:hover {
-    color: var(--cor-passar-mouse-link);
-}
-
-
-
+/* Paleta alternativa para deuteranopia: azul-marinho e âmbar substituem os verdes como sinais visuais. */
+body.modo-daltonismo { color: #172b4d; background: #f3f6fa; }
+body.modo-daltonismo .navbar { background: #fff; border-color: #a9b9cc; }
+body.modo-daltonismo .nav-bar-links a { color: #17324d; }
+body.modo-daltonismo .nav-bar-links a:hover, body.modo-daltonismo .nav-bar-links a[aria-current="page"] { color: #102b46; background: #dce9f6; }
+body.modo-daltonismo .botao-acessibilidade { color: #17324d; border-color: #17324d; }
+body.modo-daltonismo .botao-acessibilidade[aria-pressed="true"] { color: #fff; background: #17324d; border-color: #17324d; }
+body.modo-daltonismo main, body.modo-daltonismo section { filter: none; }
+body.modo-daltonismo h1, body.modo-daltonismo h2, body.modo-daltonismo h3 { color: #17324d; }
+body.modo-daltonismo .sobretitulo, body.modo-daltonismo .destaque-icone { color: #285c91; }
+body.modo-daltonismo .hero-descricao, body.modo-daltonismo .intro > p:not(.sobretitulo), body.modo-daltonismo .destaques article p, body.modo-daltonismo .nota-prototipo { color: #425b75; }
+body.modo-daltonismo .botao-principal { background: #17324d; color: #fff; }
+body.modo-daltonismo .intro { background: #e8eff7; }
+body.modo-daltonismo .destaques article, body.modo-daltonismo .mapa, body.modo-daltonismo .contato-email, body.modo-daltonismo .tudo { background: #fff; border-color: #9eb3ca; }
+body.modo-daltonismo .rodape-site { background: #17324d; }
+body.modo-daltonismo .mapa .localizacao, body.modo-daltonismo .pagina-contato .contato-descricao, body.modo-daltonismo .tudo p { color: #425b75; }
+body.modo-daltonismo .contato-endereco, body.modo-daltonismo .container > p a { color: #174f7d; }
+body.modo-daltonismo .tudo .proposito { color: #17324d; background: #e8eff7; }
+body.modo-daltonismo .pagina-rotas section > h2 { color: #17324d; }
+body.modo-daltonismo .AvisoRotas { color: #425b75; }
+body.modo-daltonismo .pagina-contato .contato h1 { color: #17324d; }

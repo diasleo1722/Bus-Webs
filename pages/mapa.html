@@ -1,51 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa | BusWebs</title>
+    <title>Mapa dos pontos | Bus-Web</title>
     <link rel="stylesheet" href="../style/nav-bar-style.css">
     <link rel="stylesheet" href="../style/mapas.css">
-    <link rel="shortcut icon" href="/imagens/fav/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../imagens/fav/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="nav-bar-links">
-        </ul>
-    </nav>
-
-<header class="cabecalho">
-    <h1>Mapas</h1>
-    <p>Imagens e localizações</p>
-  </header>
-
-  <main class="container">
-    <section class="grade-mapas" aria-label="Imagens de mapas">
-      <article class="mapa">
-        <img src="/imagens/mapa/mapa1.png" alt="Mapa 1">
-        <p class="localizacao"><b>Localização:</b> -21.222410, -50.437406</p>
-      </article>
-
-      <article class="mapa">
-        <img src="/imagens/mapa/mapa2.png" alt="Mapa 2">
-        <p class="localizacao"><b>Localização:</b> -21.20536779799727, -50.42998107951613</p>
-      </article>
-
-      <article class="mapa">
-        <img src="/imagens/mapa/mapa3.png" alt="Mapa 3">
-        <p class="localizacao"><b>Localização:</b> -21.216537795105975, -50.437066600325494</p>
-      </article>
-
-      <article class="mapa">
-        <img src="/imagens/mapa/mapa4.png" alt="Mapa 4">
-        <p class="localizacao"><b>Localização:</b> -21.203012193531595, -50.438493060257365</p>
-      </article>
-
-    </section>
-  </main>
-
-    
-    <footer></footer>
-    <script type= "module" src="../scripts/navBarPages.js"></script>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <nav class="navbar" aria-label="Navegação principal"><ul class="nav-bar-links"></ul></nav>
+    <header class="cabecalho">
+        <p class="mapa-sobretitulo">PONTOS DE REFERÊNCIA DO PROTÓTIPO</p>
+        <h1>Mapas das rotas</h1>
+        <p>Os mapas localizam os pontos de referência. As linhas e distâncias são exemplos fictícios.</p>
+    </header>
+    <main class="container" id="conteudo">
+        <section class="grade-mapas" aria-label="Mapas associados às rotas de exemplo">
+            <article class="mapa">
+                <h2>Rota 02 · McDonald’s, Jardim Nova Yorque</h2>
+                <img src="../imagens/mapa/mapa1.png" alt="Mapa do McDonald’s na Avenida Brasília, próximo ao Araçatuba Shopping">
+                <p class="localizacao"><strong>Ponto:</strong> Av. Brasília, 990–992, Vila São Paulo · <strong>Coordenadas:</strong> -21.222410, -50.437406</p>
+                <a class="link-rota" href="rotas.html#TituloRota2">Ver detalhes da rota 02</a>
+            </article>
+            <article class="mapa">
+                <h2>Rota 01 · Praça Dr. Jaime de Oliveira</h2>
+                <img src="../imagens/mapa/mapa2.png" alt="Mapa do ponto da Praça Dr. Jaime de Oliveira, próximo à Rua Rio de Janeiro">
+                <p class="localizacao"><strong>Coordenadas:</strong> -21.20536779799727, -50.42998107951613</p>
+                <a class="link-rota" href="rotas.html#TituloRota1">Ver detalhes da rota 01</a>
+            </article>
+            <article class="mapa">
+                <h2>Rota 03 · Terminal Rodoviário de Araçatuba</h2>
+                <img src="../imagens/mapa/mapa3.png" alt="Mapa do Terminal Rodoviário de Araçatuba na Rua Liberdade">
+                <p class="localizacao"><strong>Coordenadas:</strong> -21.216537795105975, -50.437066600325494</p>
+                <a class="link-rota" href="rotas.html#TituloRota3">Ver detalhes da rota 03</a>
+            </article>
+            <article class="mapa">
+                <h2>Rota 04 · Terminal Urbano Nelson Reis Alves</h2>
+                <img src="../imagens/mapa/mapa4.png" alt="Mapa do Terminal Rodoviário Urbano Nelson Reis Alves na Rua Tupinambás">
+                <p class="localizacao"><strong>Coordenadas:</strong> -21.203012193531595, -50.438493060257365</p>
+                <a class="link-rota" href="rotas.html#TituloRota4">Ver detalhes da rota 04</a>
+            </article>
+        </section>
+    </main>
+    <footer class="rodape-site"><p>Bus-Web · Projeto Ideathon FATEC Araçatuba</p></footer>
+    <script type="module" src="../scripts/navBar.js"></script>
 </body>
 </html>
